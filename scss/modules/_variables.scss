@@ -1,0 +1,26 @@
+// ----------------------------------------------------
+// ----- VARIABLES -----
+// ----------------------------------------------------
+
+// --- Font ---
+$font-base: 'Rubik', sans-serifs;
+
+// --- Colors ---
+$bg_color-primary: #fff;
+$bg_color-secondary: #215398;
+$bg_color-third: #f5f5f5;
+$font_color-banner--title: #fff;
+$font_color-banner--par: rgba($font_color-banner--title, .6);
+$font_color-headline: #2d3236;
+$font_color-box--p: #808080;
+$font_color-paragraph: rgba($font_color-headline, .6);
+$icon_color: #b3b3b3;
+$circle: #ff3859;
+
+// --- Media Queries ---
+$mobile__420: "only screen and (max-width: 420px)";
+$tablet__860: "only screen and (min-width: 860px)";
+$desktop__1200: "only screen and (min-width: 1200px)";
+$high-screen__1440: "only screen and (min-device-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)";
+
+// ----- END OF VARIABLES -----

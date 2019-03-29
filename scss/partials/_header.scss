@@ -1,0 +1,79 @@
+/* ---------------------------------------------------- */
+/* ----- HEADER ----- */
+/* ---------------------------------------------------- */
+
+.header-container {
+	@include element('logo') {
+		padding: .625rem;
+
+		@include screen('tablet860') {
+			padding: 1.25rem;
+		}
+
+		@include screen('desktop1200') {
+			padding: 1.438rem 0;
+		}
+	}
+}
+
+.banner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: $bg_color-secondary;
+	text-align: center;
+	padding: 1.25rem 0;
+	position: relative;
+	
+	@include element('title') {
+		color: $font_color-banner--title;
+		font-size: 1.5rem;
+
+		@include screen('tablet860') {
+			font-size: 2.5rem;
+			line-height: 2;
+		}
+	}
+
+	@include element('text') {
+		color: $font_color-banner--par;
+		font-size: .875rem;
+		font-weight: 300;
+
+		@include screen('tablet860') {
+			font-size: 1rem;
+		}
+	}
+
+	@include screen('tablet860') {
+		padding: 2.5rem 0;
+	}
+
+  @include screen('desktop1200') {
+    padding: 3.75rem 0;
+  }
+
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: $circle;
+	}
+}
+
+//  --- boxes-container mixin ---
+.box-container {
+	@include boxes-container;
+}
+
+// --- boxes-container placeholder ---
+// .box-container {
+//  @extend %boxes-container;
+// }
+
+/* ----- END OF HEADER ----- */

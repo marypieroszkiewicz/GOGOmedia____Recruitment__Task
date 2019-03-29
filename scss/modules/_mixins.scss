@@ -1,0 +1,130 @@
+// ----------------------------------------------------
+// ----- MIXINS -----
+// ----------------------------------------------------
+
+  // --- Media Queries - Breakpoints ---
+  @mixin screen($size) {
+  	@if $size == mobile420 {
+  		@media #{$mobile__420} {
+  			@content;
+  		}
+  	}
+  	@else if $size == tablet860 {
+  		@media #{$tablet__860} {
+    			@content;
+    		}
+    	}
+  	@else if $size == desktop1200 {
+      	@media #{$desktop__1200} {
+      		@content;
+      	}
+      }
+  	@else if $size == high-screen1440 {
+    		@media #{$high-screen__1440} {
+    			@content;
+    		}
+    	}
+  	@else {
+      	@media only screen and #{$size} {
+        		@content;
+      	}
+    	}
+  }
+  // --- End Of Media Queries - Breakpoints
+
+
+  // --- Clearfix ---
+  @mixin clearfix {
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+  // ----- End Of Clearfix -----
+  
+
+  // --- BEM ---
+
+  // Block Element
+  @mixin element($element) {
+    &__#{$element} {
+      @content;
+    }
+  }
+
+  // Block Modifier
+  @mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+  }
+ // ----- End Of BEM -----
+
+	// Box Container
+	@mixin boxes-container {
+	  display: flex;
+	  flex-direction: column;
+	  width: 100%;
+	  padding: 1.25rem .625rem;
+	  text-align: center;
+
+	  @include screen('tablet860') {
+	    padding: 2.875rem 1.75rem 0;
+	  }
+
+	  @include screen('desktop1200') {
+	    flex-direction: row;
+	    justify-content: space-between;
+	    padding: 2.875rem 4.375rem 0;
+	  }
+
+	  @include element('box') {
+	    flex-basis: 100%;
+	    background-color: $bg_color-primary;
+	    padding: .9375rem;
+	    margin-bottom: 1.188rem;
+
+	    @include screen('tablet860') {
+	    	padding: 1.875rem;
+	    }
+
+	    @include screen('desktop1200') {
+	      flex-basis: 33.33%;
+	      padding: 2.5rem 1.875rem;
+	      margin-right: 1.188rem;
+	      margin-bottom: 0;
+	    }
+
+	    &:last-child {
+	      margin-right: 0;
+	      margin-bottom: 0;
+	    }
+
+	    & .box__head {
+	      font-size: 1.25rem;
+	      font-weight: 400;
+	      color: $font_color-headline;
+	      line-height: 28px;
+	    }
+
+	    & .box__par {
+	      font-size: .9375rem;
+	      color: $font_color-box--p;
+	      line-height: 25px;
+	    }
+	  }
+	  
+	  & .box--1 {
+	      .box__icon {
+	        padding-top: .875rem;
+	        .fa-wordpress {
+	          color: $icon_color;
+	          font-size: 2.625rem;
+
+	        }
+	      }
+	  }
+	}
+
+// ----- END OF MIXINS -----

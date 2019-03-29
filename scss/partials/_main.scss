@@ -1,0 +1,44 @@
+/* ---------------------------------------------------- */
+/* ----- MAIN ----- */
+/* ---------------------------------------------------- */
+
+.main-container {
+	background-color: $bg_color-third;
+	padding-bottom: 1.875rem;
+
+	@include screen('tablet860') {
+		padding-bottom: 2.5rem;
+	}
+
+	@include screen('desktop1200') {
+		padding-bottom: 3.75rem;
+	}
+}
+
+.wrapper-container {
+	text-align: center;
+	padding: 1.25rem .625rem 0;
+
+	@include element('title') {
+		color: $font_color-headline;
+		font-size: 1.5rem;
+
+		@include screen('tablet860') {
+			font-size: 2.5rem;
+			line-height: 2;
+		}
+	}
+
+	@include element('par') {
+		color: $font_color-paragraph;
+		font-weight: 300;
+	}
+}
+
+.icons {
+	margin: 0 auto;
+}
+
+
+
+/* ----- END OF MAIN ----- */
